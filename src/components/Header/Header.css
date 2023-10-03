@@ -1,0 +1,6 @@
+.header {
+  max-height: 576px;
+  background: transparent url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.svg") center no-repeat;
+  display: flex;
+  flex-direction: column;
+}
