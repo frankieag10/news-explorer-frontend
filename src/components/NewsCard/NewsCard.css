@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/roboto-400-regular.woff);
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url(../../fonts/roboto-slab-400-regular.woff);
+}
+
+.newscard {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+.newscard__save-box {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  display: flex;
+  gap: 5px;
+}
+.newscard__save-tooltip {
+  color: #000;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background-color: #fff;
+  width: 182px;
+  text-align: center;
+  padding: 11px 20px;
+  border-radius: 8px;
+}
+.newscard__save-button {
+  background: no-repeat url(../../images/bookmark.svg) #fff;
+  background-size: 24px;
+  background-position: center;
+  border-radius: 8px;
+  margin: 0;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  transition: all ease 420ms;
+}
+.newscard__save-button:hover {
+  background: no-repeat url(../../images/bookmark_outline_hover.svg) #fff;
+  background-size: 24px;
+  background-position: center;
+}
+.newscard__info {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 0;
+  padding: 24px;
+  gap: 12px;
+}
+.newscard__date {
+  color: #b6bcbf;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+}
+.newscard__title {
+  color: #1a1b22;
+  font-family: "Roboto Slab";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+}
+.newscard__description {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+}
+.newscard__author {
+  color: #b6bcbf;
+  font-family: Roboto Slab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  margin-top: 6px;
+}
