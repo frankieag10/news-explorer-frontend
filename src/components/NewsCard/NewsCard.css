@@ -50,7 +50,7 @@
   transition: all ease 420ms;
 }
 .newscard__save-button:hover {
-  background: no-repeat url(../../images/bookmark_outline_hover.svg) #fff;
+  background: no-repeat url(../../images/bookmark-hover.svg) #fff;
   background-size: 24px;
   background-position: center;
 }

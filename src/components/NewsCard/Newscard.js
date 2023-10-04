@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./NewsCard.css";
+const imageCard = require("../../images/image_04.png");
 
 function NewsCard() {
   const [tooltipVisible, setTooltipVisible] = useState(false);

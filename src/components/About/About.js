@@ -1,5 +1,5 @@
 import React from "react";
-import "./about.css";
+import "./About.css";
 const imageAvatar = require("../../images/ME.jpeg");
 
 function About() {
