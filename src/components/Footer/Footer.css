@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/roboto-400-regular.woff);
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 104px;
+}
+.footer__navigation {
+  display: flex;
+  gap: 40px;
+}
+.footer__links {
+  display: flex;
+  gap: 40px;
+}
+.footer__icons {
+  display: flex;
+  gap: 24px;
+}
+.footer__button {
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all ease 380ms;
+}
+.footer__button:hover {
+  opacity: 0.7;
+}
+.footer__link.github-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../../images/github.svg);
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.footer__link.linkedin-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../../images/facebook.svg);
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all ease 380ms;
+}
+.footer__link:hover {
+  opacity: 0.7;
+}
+.footer__copyright {
+  color: #b6bcbf;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
