@@ -1,0 +1,33 @@
+.SearchBar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.SearchBar__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 80px 416px 88px;
+}
+
+.SearchBar__title {
+  color: #fff;
+  font-family: "Roboto Slab", Arial;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.2;
+  width: 608px;
+  height: 128px;
+  margin: 0 0 32px;
+}
+
+.SearchBar__explaination {
+  color: #fff;
+  font-family: "Roboto", Arial;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  width: 608px;
+  margin: 0;
+}
