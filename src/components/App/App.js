@@ -2,7 +2,7 @@ import Header from "../Header/Header.js";
 import Main from "../Main/Main.js";
 import Footer from "../Footer/Footer.js";
 import "./App.css";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -30,15 +30,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Route
-        exact
-        path="/"
-      >
-        <Main
-          signinClick={handleSigninModal}
-          signoutClick={handleSignout}
-        />
-      </Route>
+      <Routes>
+        <Route
+          path="/"
+          element={<Main />}
+        ></Route>
+      </Routes>
       <Footer />
     </div>
   );
