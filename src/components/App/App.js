@@ -1,5 +1,5 @@
 import Header from "../Header/Header.js";
-import Main from "../Main/Main.js";
+import Main from "../Main/Main";
 import Footer from "../Footer/Footer.js";
 import "./App.css";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -8,16 +8,10 @@ import { useLocation } from "react-router-dom";
 
 // components
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
-//import Main from "../Main/Main.js";
-import SavedNews from "../SavedNews/SavedNews.js";
-//import Footer from "../Footer/Footer.js";
-import SigninModal from "../SigninModal/SigninModal.js";
-import SignupModal from "../SignupModal/SignupModal.js";
-import SuccessModal from "../SuccessModal/SuccessModal.js";
-import { ESC_KEYCODE } from "../../utils/constants.js";
-
-// API
-//import { getNews } from "../../utils/NewsApi.js";
+import SavedNews from "../SavedNews/SavedNews";
+import SigninModal from "../SigninModal/SigninModal";
+import SignupModal from "../SignupModal/SignupModal";
+import SuccessModal from "../SuccessModal/SuccessModal";
 import MobileMenu from "../MobileMenu/MobileMenu.js";
 
 function App() {
@@ -52,16 +46,6 @@ function App() {
     }
   };
 
-  /*const handleNewsSearch = (input) => {
-    setIsLoading(true);
-    //const searchNews = getNews(input);
-    searchNews.then((data) => {
-      setHasSearched(true);
-      //setSearchResults(data.articles);
-      setIsLoading(false);
-    });
-  };
-*/
   const handleSuccessModalClick = () => {
     handleCloseModal();
     handleOpenModal("signin");
@@ -73,15 +57,11 @@ function App() {
 
   function handleSignin() {
     setLoggedIn(true);
-    setCurrentUser("Sam");
+    setCurrentUser("frank");
     handleCloseModal();
   }
 
-  function handleSignup() {
-    // if(!existingUser) {
-    //  setCurrentUser()
-    // }
-  }
+  function handleSignup() {}
 
   function handleSignout() {
     setCurrentUser("");
@@ -106,22 +86,8 @@ function App() {
     setCurrentPage(location.pathname);
   }, [location.pathname]);
 
-  useEffect(() => {
-    if (!activeModal) return;
-    const handleEscClose = (e) => {
-      if (e.which === ESC_KEYCODE) {
-        handleCloseModal();
-      }
-    };
-
-    document.addEventListener("keydown", handleEscClose);
-
-    return () => document.removeEventListener("keydown", handleEscClose);
-  }, [activeModal]);
-
   return (
     <div className="page">
-      <Header />
       <Routes>
         <Route
           path="/"
@@ -133,30 +99,48 @@ function App() {
           }
         />
         <Route
+          path="/saved-news"
+          element={<SavedNews />}
+        />
+        <Route
           path="/signin"
-          element={<SigninModal />}
+          element={
+            <SigninModal
+              isOpen={handleSigninModal}
+              onSignin={handleSignin}
+              handleClose={handleCloseModal}
+              onAltClick={handleAltClick}
+            />
+          }
         />
         <Route
           path="/signup"
-          element={<SignupModal />}
+          element={
+            <SignupModal
+              isOpen={handleSignupModal}
+              onSignup={handleSignup}
+              handleClose={handleCloseModal}
+              onAltClick={handleAltClick}
+            />
+          }
         />
         <Route
           path="/success"
-          element={<SuccessModal />}
-        />
-        <ProtectedRoute
-          path="/saved-news"
-          element={<Navigate to="/" />}
+          element={
+            <SuccessModal
+              name="success"
+              onClose={handleCloseModal}
+              onClick={handleSuccessModalClick}
+            />
+          }
         />
       </Routes>
+      <MobileMenu
+        onClose={closeMobileMenu}
+        onSigninClick={handleMobileMenuOverlay}
+        onSignoutClick={handleSignout}
+      />
       <Footer />
-      {mobileMenuOpen && (
-        <MobileMenu
-          onClose={closeMobileMenu}
-          onSigninClick={handleMobileMenuOverlay}
-          onSignoutClick={handleSignout}
-        />
-      )}
     </div>
   );
 }
