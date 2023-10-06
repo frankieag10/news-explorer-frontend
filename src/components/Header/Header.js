@@ -2,15 +2,14 @@ import React from "react";
 import "./Header.css";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import SearchBar from "../SearchBar/SearchBar";
+import Preloader from "../Preloader/Preloader";
 
-function Header(onSigninClick, onSignoutClick) {
+function Header() {
   return (
     <div className="header">
-      <NavigationBar
-        onSigninClick={onSigninClick}
-        onSignoutClick={onSignoutClick}
-      />
+      <NavigationBar />
       <SearchBar />
+      <Preloader></Preloader>
     </div>
   );
 }

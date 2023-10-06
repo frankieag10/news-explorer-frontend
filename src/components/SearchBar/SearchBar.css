@@ -1,33 +1,88 @@
-.SearchBar {
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../../fonts/roboto-slab-400-regular.woff");
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../../fonts/roboto-400-regular.woff");
+}
+@font-face {
+  font-family: "Roboto 500";
+  src: url("../../fonts/roboto-500.woff");
+}
+.searchbar {
+  margin: 80px auto;
+  max-width: 608px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 80px;
+  gap: 32px;
+  align-items: center;
+  padding: 0;
 }
-
-.SearchBar__container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 80px 416px 88px;
-}
-
-.SearchBar__title {
-  color: #fff;
-  font-family: "Roboto Slab", Arial;
+.searchbar__title {
+  font-family: "Roboto Slab";
   font-size: 60px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 1.2;
-  width: 608px;
-  height: 128px;
-  margin: 0 0 32px;
-}
-
-.SearchBar__explaination {
-  color: #fff;
-  font-family: "Roboto", Arial;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.2;
-  width: 608px;
+  line-height: 64px;
   margin: 0;
+  padding: 0;
+  color: #fff;
+}
+.searchbar__subtitle {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Regular";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+}
+.searchbar-container {
+  position: relative;
+  margin: 0;
+  margin-top: 56px;
+  padding: 0;
+}
+.searchbar__input {
+  font-family: "Roboto Regular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+  padding: 22px 24px;
+  width: 608px;
+  border-radius: 100px;
+  border: 1px solid #d1d2d6;
+  backdrop-filter: blur(4px);
+  outline: none;
+  color: #000;
+}
+.searchbar__input::placeholder {
+  color: #b6bcbf;
+}
+.searchbar__button {
+  font-family: "Roboto 500";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding: 21px 56px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 1px solid #2f71e5;
+  background-color: #2f71e5;
+  color: #fff;
+  transition: all ease 400ms;
+}
+.searchbar__button:hover {
+  background-color: #347eff;
+}
+.searchbar__button:active {
+  background-color: #2a65cc;
 }

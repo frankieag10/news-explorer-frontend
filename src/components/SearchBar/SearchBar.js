@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./SearchBar.css";
-
-function SearchBar() {
+const loadingImage = require("../../images/not-found_v1.svg");
+export default function Searchbar() {
   return (
-    <div className="SearchBar">
-      <div className="SearchBar__container">
-        <h2 className="SearchBar__title">What's going on in the world?</h2>
-        <p className="SearchBar__explaination">Find the latest news on any topic and save them in your personal account.</p>
+    <div className="searchbar">
+      <h2 className="searchbar__title">What's going on in the world?</h2>
+      <span className="searchbar__subtitle">Find the latest news on any topic and save them in your personal account.</span>
+      <div className="searchbar-container">
+        <input
+          className="searchbar__input"
+          placeholder="Search something ..."
+        />
+        <button
+          value="Search"
+          name="search"
+          title="Search"
+          className="searchbar__button"
+        >
+          Search
+        </button>
       </div>
     </div>
   );
 }
-
-export default SearchBar;
