@@ -1,7 +1,8 @@
-import { navLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import CurrentPageContext from "../../contexts/CurrentPageContext";
 import logout from "../../images/logout.svg";
+import CurrentUserContext from "../../contexts/CurrentUserContexts";
 
 function MobileMenu({ onClose, onSigninClick, onSignoutClick }) {
   const { currentPage } = useContext(CurrentPageContext);
