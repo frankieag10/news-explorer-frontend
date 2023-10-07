@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App">
       {!isLoggedIn ? <Header /> : <SavedNewsHeader />}
-      {!isLoggedIn ? <Header /> : <SavedNews />}
       <Main />
       <Footer />
     </div>

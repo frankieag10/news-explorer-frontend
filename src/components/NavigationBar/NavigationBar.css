@@ -44,12 +44,12 @@
   cursor: pointer;
   transition: all ease 420ms;
 }
-.navigationbar__button:hover.navigationbar:after {
+.navigationbar__button:hover.navigationbar__button:after {
   display: block;
   content: "";
   width: 100%;
   height: 3px;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid var(--main-primary, #1a1b22);
   position: absolute;
   bottom: -14.9px;
   right: 0;
