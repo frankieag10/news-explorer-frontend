@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Robot";
+  src: url(../../fonts/roboto-400-regular.woff);
+}
+@font-face {
+  font-family: "Robot Slab";
+  src: url(../../fonts/roboto-slab-400-regular.woff);
+}
+.loading {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background: #f5f6f7;
+  margin: 0;
+  padding: 80px 0;
+}
+
+.loading__spinner {
+  width: 74px;
+  height: 74px;
+  background-image: url(../../images/Ellipse.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: spin-anim 1.2s linear infinite;
+  margin: 0;
+  padding: 0;
+}
+.loading__title {
+  color: #1a1b22;
+  text-align: center;
+  font-family: "Roboto Slab";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.loading__text {
+  width: 356px;
+  color: #b6bcbf;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

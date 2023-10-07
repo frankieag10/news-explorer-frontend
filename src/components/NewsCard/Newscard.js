@@ -14,7 +14,7 @@ function NewsCard() {
   };
 
   return (
-    <div className="news-card">
+    <div className="newscard">
       <div className="news-card__save-box">
         {tooltipVisible && <span className="news-card__save-tooltip">Sign in to save articles</span>}
         <button
