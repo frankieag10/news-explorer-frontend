@@ -2,6 +2,7 @@ import React from "react";
 import "./NavigationBar.css";
 
 function NavigationBar({ inSavedNews = true }) {
+  const isLoggedIn = true;
   return (
     <div className={`navigationbar ${inSavedNews ? "navigationbar_saved-news" : ""}`}>
       <div className="navigationbar__left-side">
@@ -12,7 +13,11 @@ function NavigationBar({ inSavedNews = true }) {
         <button className={`navigationbar__button ${inSavedNews ? "navigationbar__button_saved-news" : ""} navigationbar__button_active`}>
           Saved Articles
         </button>
-        <button className={`navigationbar__signin-button  ${inSavedNews ? "navigationbar__signin-button_saved-news" : ""}`}>Frankie</button>
+        {!isLoggedIn ? (
+          <button className={`navigationbar__signin-button`}>Sign in</button>
+        ) : (
+          <button className={`navigationbar__logout-button  ${inSavedNews ? "navbar__logout-button_saved-news" : ""}`}>Frankie</button>
+        )}
       </div>
     </div>
   );
