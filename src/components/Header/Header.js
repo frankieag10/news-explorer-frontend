@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import SearchBar from "../SearchBar/SearchBar";
-import Loading from "../";
+import Loading from "../Loading/Loading";
 import Preloader from "../Preloader/Preloader";
 
 function Header() {
