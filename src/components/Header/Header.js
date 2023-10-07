@@ -10,6 +10,7 @@ function Header() {
     <div className="header">
       <NavigationBar />
       <SearchBar />
+      <Loading />
     </div>
   );
 }
