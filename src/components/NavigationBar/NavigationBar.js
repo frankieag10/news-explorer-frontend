@@ -12,7 +12,7 @@ function NavigationBar({ inSavedNews = true }) {
         <button className={`navigationbar__button ${inSavedNews ? "navigationbar__button_saved-news" : ""} navigationbar__button_active`}>
           Saved Articles
         </button>
-        <button className={`navigationbar__signin-button  ${inSavedNews ? "navigationbar__signin-button_saved-news" : ""}`}>Sign in</button>
+        <button className={`navigationbar__signin-button  ${inSavedNews ? "navigationbar__signin-button_saved-news" : ""}`}>Frankie</button>
       </div>
     </div>
   );
