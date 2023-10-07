@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/roboto-400-regular.woff);
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url(../../fonts/roboto-slab-400-regular.woff);
+}
+.saved-news-header__titlebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 104px 56px 104px;
+}
+.saved-news-header__title {
+  width: 530px;
+  color: rgba(26, 27, 34, 0.5);
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+}
+.saved-news-header__news-count {
+  color: var(--main-primary, #1a1b22);
+  font-family: "Roboto Slab";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 46px;
+  padding: 0;
+  margin: 0;
+}
+.saved-news-header__keywords {
+  color: #1a1b22;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+}
