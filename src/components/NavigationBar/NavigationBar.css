@@ -44,7 +44,7 @@
   cursor: pointer;
   transition: all ease 420ms;
 }
-.navigationbar__button:hover.navigationbar__button:after {
+.navigationbar__button:hover.navigationbar__button::after {
   display: block;
   content: "";
   width: 100%;
