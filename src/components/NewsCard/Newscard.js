@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./NewsCard.css";
 const imageCard = require("../../images/image_04.png");
 
-function NewsCard() {
+function NewsCard({ inSavedNews }) {
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
   const handleMouseEnter = () => {
@@ -16,13 +16,24 @@ function NewsCard() {
   return (
     <div className="newscard">
       <div className="newscard__save-box">
-        {tooltipVisible && <span className="newscard__save-tooltip">Sign in to save articles</span>}
-        <button
-          className="newscard__save-button"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        ></button>
+        {inSavedNews == true
+          ? tooltipShow && <span className="newscard__save-tooltip">Remove from saved</span>
+          : tooltipShow && <span className="newscard__save-tooltip">Sign in to save articles</span>}
+        {inSavedNews == true ? (
+          <button
+            className="newscard__remove-button"
+            onMouseOver={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          ></button>
+        ) : (
+          <button
+            className="newscard__save-button"
+            onMouseOver={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          ></button>
+        )}
       </div>
+      {inSavedNews && <span className="newscard__main-title">Nature</span>}
       <img
         src={imageCard}
         alt="News"
