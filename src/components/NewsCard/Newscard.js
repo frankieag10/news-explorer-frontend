@@ -17,8 +17,8 @@ function NewsCard({ inSavedNews }) {
     <div className="newscard">
       <div className="newscard__save-box">
         {inSavedNews == true
-          ? tooltipShow && <span className="newscard__save-tooltip">Remove from saved</span>
-          : tooltipShow && <span className="newscard__save-tooltip">Sign in to save articles</span>}
+          ? tooltipVisible && <span className="newscard__save-tooltip">Remove from saved</span>
+          : tooltipVisible && <span className="newscard__save-tooltip">Sign in to save articles</span>}
         {inSavedNews == true ? (
           <button
             className="newscard__remove-button"
