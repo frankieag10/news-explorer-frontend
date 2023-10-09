@@ -1,11 +1,11 @@
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList";
+import NewsCard from "../NewsCard/NewsCard";
 
-function SavedNews() {
+function SavedNews({ inSavedNews = true }) {
   return (
     <div className="saved-news">
-      <SavedNewsHeader />
-      <SavedNewsCardList />
+      <NewsCard inSavedNews={inSavedNews} />
     </div>
   );
 }
