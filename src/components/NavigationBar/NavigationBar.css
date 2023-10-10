@@ -48,7 +48,7 @@
   content: "";
   width: 100%;
   height: 3px;
-  border-bottom: 3px solid var(--main-primary, #1a1b22);
+  border-bottom: 3px solid #fff;
   position: absolute;
   bottom: -14.9px;
   right: 0;
@@ -58,7 +58,7 @@
   content: "";
   width: 100%;
   height: 3px;
-  border-bottom: 3px solid var(--main-primary, #212228);
+  border-bottom: 3px solid #fff;
   position: absolute;
   bottom: -14.9px;
   right: 0;
