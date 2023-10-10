@@ -14,6 +14,7 @@ import { useLocation } from "react-router-dom";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [activeModal, setActiveModal] = useState("");
+  const [currentUser, setCurrentUser] = useState(""); // Add currentUser state
 
   const handleOpenModal = (modal) => {
     setActiveModal(modal);
@@ -31,17 +32,43 @@ function App() {
 
   const handleSignupModal = () => handleOpenModal("signup");
 
+  const handleAltClick = () => {
+    if (activeModal === "signin") {
+      handleCloseModal();
+      handleOpenModal("signup");
+    }
+    if (activeModal === "signup") {
+      handleCloseModal();
+      handleOpenModal("signin");
+    }
+  };
+
+  function handleSignin() {
+    setIsLoggedIn(true);
+    setCurrentUser("frankie");
+    handleCloseModal();
+  }
+
   return (
     <div className="App">
       {!isLoggedIn ? <Header isLoggedIn={isLoggedIn} /> : <SavedNewsHeader isLoggedIn={isLoggedIn} />}
       <Main />
+      {isLoggedIn && <SavedNews />}
       <Footer />
+      {activeModal === "signin" && (
+        <SigninModal
+          isOpen={handleSigninModal}
+          onSignin={handleSignin}
+          handleClose={handleCloseModal}
+          onAltClick={handleAltClick}
+        />
+      )}
       {activeModal === "signup" && (
         <SignupModal
           isOpen={activeModal === "signup"}
           onClose={handleCloseModal}
           name="signup"
-          buttonText="Signup"
+          buttonText="signup"
         />
       )}
     </div>

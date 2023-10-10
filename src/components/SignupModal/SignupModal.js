@@ -25,12 +25,12 @@ function SignupModal({ isOpen, onSignup, handleClose, onAltClick }) {
 
   return (
     <ModalWithForm
-      title="Sign Up"
+      title="SignUp"
       onSubmit={handleSubmit}
       handleAltClick={onAltClick}
       onClose={handleClose}
-      buttonText="Sign up"
-      altButtonText="Sign in"
+      buttonText="SignUp"
+      altButtonText="SignIn"
     >
       <label>
         <h3 className="modal__label">Email:</h3>
