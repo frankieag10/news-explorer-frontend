@@ -1,16 +1,31 @@
 import { useContext } from "react";
 import About from "../About/About";
+import Header from "../Header/Header";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import IsLoadingContext from "../../contexts/IsLoadingContext";
-import SavedNews from "../SavedNews/SavedNews";
+import Preloader from "../Preloader/Preloader";
 
-function Main() {
+function Main({ signinClick, signoutClick }) {
+  const { isLoading } = useContext(IsLoadingContext);
   return (
-    <div className="main">
-      <About />
-      <NewsCardList />
-      <SavedNews />
-    </div>
+    <>
+      <Header
+        onSigninClick={signinClick}
+        onSignoutClick={signoutClick}
+      />
+      <section className="main">
+        <div className="main__results">
+          {isLoading === false ? (
+            <>
+              <NewsCardList />
+            </>
+          ) : (
+            <Preloader />
+          )}
+        </div>
+        <About />
+      </section>
+    </>
   );
 }
 

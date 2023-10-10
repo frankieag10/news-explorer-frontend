@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+
   return (
     <div className="App">
       {!isLoggedIn ? <Header /> : <SavedNewsHeader />}
