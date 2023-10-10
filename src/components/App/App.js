@@ -4,9 +4,9 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer.js";
 import "./App.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
+import SigninModal from "../SigninModal/SigninModal.js";
 import SavedNews from "../SavedNews/SavedNews";
-import { Route, Routes, Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Route, Routes, Navigate, useHistory, Switch } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 function App() {
@@ -17,6 +17,12 @@ function App() {
       {!isLoggedIn ? <Header /> : <SavedNewsHeader />}
       <Main />
       <Footer />
+      <SignupModal
+        isOpen={activeModal === "signup"}
+        onClose={handleCloseModal}
+        name="signup"
+        buttonText="Signup"
+      />
     </div>
   );
 }
