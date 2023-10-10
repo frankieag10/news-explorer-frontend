@@ -1,16 +1,21 @@
-import React, { useSate } from "react";
+import React, { useState } from "react";
 import Header from "../Header/Header.js";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer.js";
 import "./App.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-import SigninModal from "../SigninModal/SigninModal.js";
+import SignupModal from "../SignupModal/SignupModal.js";
 import SavedNews from "../SavedNews/SavedNews";
 import { Route, Routes, Navigate, useHistory, Switch } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [activeModal, setActiveModal] = useState("");
+
+  const handleCloseModal = () => {
+    setActiveModal("");
+  };
 
   return (
     <div className="App">

@@ -5,7 +5,7 @@ const imageCard = require("../../images/image_04.png");
 function NewsCard({ inSavedNews }) {
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
-  const handleMouseEnter = () => {
+  const handleMouseOver = () => {
     setTooltipVisible(true);
   };
 
@@ -16,22 +16,12 @@ function NewsCard({ inSavedNews }) {
   return (
     <div className="newscard">
       <div className="newscard__save-box">
-        {inSavedNews == true
-          ? tooltipVisible && <span className="newscard__save-tooltip">Remove from saved</span>
-          : tooltipVisible && <span className="newscard__save-tooltip">Sign in to save articles</span>}
-        {inSavedNews == true ? (
-          <button
-            className="newscard__remove-button"
-            onMouseOver={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          ></button>
-        ) : (
-          <button
-            className="newscard__save-button"
-            onMouseOver={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          ></button>
-        )}
+        {tooltipVisible && <span className="newscard__save-tooltip">{inSavedNews ? "Remove from saved" : "Sign in to save articles"}</span>}
+        <button
+          className={`newscard__${inSavedNews ? "remove" : "save"}-button`}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseLeave}
+        ></button>
       </div>
       {inSavedNews && <span className="newscard__main-title">Nature</span>}
       <img
