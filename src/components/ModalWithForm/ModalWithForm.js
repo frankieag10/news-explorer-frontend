@@ -4,8 +4,17 @@ import closeIcon from "../../images/close.svg";
 import { useEscape } from "../../components/Hooks/useEscape";
 
 function ModalWithForm({ children, title, onSubmit, onClose, buttonText, handleAltClick, altButtonText, isDisabled }) {
+  const onCloseBackgroundModal = (evt) => {
+    evt.stopPropagation();
+    if (evt.target === evt.currentTarget) {
+      onClose();
+    }
+  };
   return (
-    <div className={`modal`}>
+    <div
+      className={`modal`}
+      onClick={onCloseBackgroundModal}
+    >
       <div className="modal__container">
         <h2 className="modal__title">{title}</h2>
         <button

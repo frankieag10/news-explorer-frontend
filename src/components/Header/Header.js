@@ -5,12 +5,12 @@ import SearchBar from "../SearchBar/SearchBar";
 import Loading from "../Loading/Loading";
 import Preloader from "../Preloader/Preloader";
 
-function Header({ isLoggedIn, onSigninClick, onSignoutClick }) {
+function Header({ isLoggedIn, handleOpenSigninModal, onSignoutClick }) {
   return (
     <div className="header">
       <NavigationBar
-        onSigninClick={onSigninClick}
-        onSignoutClick={onSignoutClick}
+        handleOpenSigninModal={handleOpenSigninModal}
+        isLoggedIn={isLoggedIn}
       />
       <SearchBar />
       <Loading />
