@@ -1,6 +1,7 @@
 import React from "react";
 import "../ModalWithForm/ModalWithForm.css";
 import closeIcon from "../../images/close.svg";
+import { useEscape } from "../../components/Hooks/useEscape";
 
 function ModalWithForm({ children, title, onSubmit, onClose, buttonText, handleAltClick, altButtonText, isDisabled }) {
   return (

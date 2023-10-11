@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useEscape } from "../../components/Hooks/useEscape";
 
 function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
   const [email, setEmail] = useState("");

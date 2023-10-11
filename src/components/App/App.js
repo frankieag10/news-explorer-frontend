@@ -8,6 +8,7 @@ import SignupModal from "../SignupModal/SignupModal.js";
 import SigninModal from "../SigninModal/SigninModal.js";
 import SavedNews from "../SavedNews/SavedNews";
 import SuccessModal from "../SuccessModal/SuccessModal";
+import { useEscape } from "../Hooks/useEscape.js";
 import { Route, Routes, Navigate, useHistory, Switch } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -43,11 +44,29 @@ function App() {
     }
   };
 
+  const handleSuccessModalClick = () => {
+    handleCloseModal();
+    handleOpenModal("signin");
+  };
+
   function handleSignin() {
     setIsLoggedIn(true);
     setCurrentUser("frankie");
     handleCloseModal();
   }
+
+  React.useEffect(() => {
+    if (!activeModal) return;
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscClose);
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);
 
   return (
     <div className="App">
@@ -69,6 +88,13 @@ function App() {
           onClose={handleCloseModal}
           name="signup"
           buttonText="signup"
+        />
+      )}
+      {activeModal === "success" && (
+        <SuccessModal
+          name="success"
+          onClose={handleCloseModal}
+          onClick={handleSuccessModalClick}
         />
       )}
     </div>
