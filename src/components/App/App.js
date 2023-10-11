@@ -13,9 +13,9 @@ import { Route, Routes, Navigate, useHistory, Switch } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
-  const [currentUser, setCurrentUser] = useState(""); // Add currentUser state
+  const [currentUser, setCurrentUser] = useState("");
 
   const handleOpenModal = (modal) => {
     setActiveModal(modal);
@@ -25,7 +25,7 @@ function App() {
     setActiveModal("");
   };
 
-  const handleSignupClick = () => {
+  const handleOpenSigninModal = () => {
     setActiveModal("signup");
   };
 
@@ -70,7 +70,14 @@ function App() {
 
   return (
     <div className="App">
-      {!isLoggedIn ? <Header isLoggedIn={isLoggedIn} /> : <SavedNewsHeader isLoggedIn={isLoggedIn} />}
+      {!isLoggedIn ? (
+        <Header
+          isLoggedIn={isLoggedIn}
+          handleOpenSigninModal={handleOpenSigninModal}
+        />
+      ) : (
+        <SavedNewsHeader isLoggedIn={isLoggedIn} />
+      )}
       <Main />
       {isLoggedIn && <SavedNews />}
       <Footer />
@@ -85,9 +92,9 @@ function App() {
       {activeModal === "signup" && (
         <SignupModal
           isOpen={activeModal === "signup"}
-          onClose={handleCloseModal}
+          handleCloseModal={handleCloseModal}
           name="signup"
-          buttonText="signup"
+          buttonText="Signup"
         />
       )}
       {activeModal === "success" && (
