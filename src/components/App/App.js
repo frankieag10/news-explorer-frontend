@@ -26,7 +26,7 @@ function App() {
   };
 
   const handleOpenSigninModal = () => {
-    setActiveModal("signup");
+    handleOpenModal("signin");
   };
 
   const handleSigninModal = () => handleOpenModal("signin");
@@ -83,7 +83,7 @@ function App() {
       <Footer />
       {activeModal === "signin" && (
         <SigninModal
-          isOpen={handleSigninModal}
+          isOpen={true}
           onSignin={handleSignin}
           handleClose={handleCloseModal}
           onAltClick={handleAltClick}
@@ -91,8 +91,8 @@ function App() {
       )}
       {activeModal === "signup" && (
         <SignupModal
-          isOpen={activeModal === "signup"}
-          handleCloseModal={handleCloseModal}
+          isOpen={true}
+          handleClose={handleCloseModal}
           name="signup"
           buttonText="Signup"
         />
@@ -100,7 +100,7 @@ function App() {
       {activeModal === "success" && (
         <SuccessModal
           name="success"
-          onClose={handleCloseModal}
+          handleClose={handleCloseModal}
           onClick={handleSuccessModalClick}
         />
       )}
