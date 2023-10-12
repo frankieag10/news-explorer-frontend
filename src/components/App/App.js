@@ -15,7 +15,6 @@ import { useLocation } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [inSavedNews, setInSavedNews] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [currentUser, setCurrentUser] = useState("");
 
