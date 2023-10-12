@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useEscape } from "../../components/Hooks/useEscape";
 
-function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
+function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, buttonText, onAltClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
@@ -39,7 +39,7 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
     <ModalWithForm
       title="Sign In"
       onSubmit={handleSubmit}
-      onClose={handleClose}
+      onClose={handleCloseModal}
       handleAltClick={onAltClick}
       buttonText="Sign in"
       altButtonText="Sign up"

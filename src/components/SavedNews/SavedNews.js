@@ -1,5 +1,5 @@
-import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList";
+import React from "react";
+import "./SavedNews.css";
 import NewsCard from "../NewsCard/NewsCard";
 
 function SavedNews({ inSavedNews = true }) {

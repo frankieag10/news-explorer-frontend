@@ -2,6 +2,9 @@ import React from "react";
 import "./NavigationBar.css";
 
 function NavigationBar({ inSavedNews = false, isLoggedIn, handleOpenSigninModal }) {
+  console.log("inSavedNews:", inSavedNews);
+  console.log("isLoggedIn:", isLoggedIn);
+
   return (
     <div className={`navigationbar ${inSavedNews ? "navigationbar_saved-news" : ""}`}>
       <div className="navigationbar__left-side">
@@ -24,7 +27,7 @@ function NavigationBar({ inSavedNews = false, isLoggedIn, handleOpenSigninModal 
             Saved Articles
           </button>
         )}
-        {isLoggedIn ? (
+        {isLoggedIn == true ? (
           <button className="navigationbar__logout-button">Frank</button>
         ) : (
           <button

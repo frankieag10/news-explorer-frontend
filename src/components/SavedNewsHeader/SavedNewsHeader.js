@@ -2,10 +2,13 @@ import React from "react";
 import "./SavedNewsHeader.css";
 import NavigationBar from "../NavigationBar/NavigationBar";
 
-export default function SavedNewsHeader() {
+export default function SavedNewsHeader({ isLoggedIn, handleOpenSigninModal }) {
   return (
     <div className="saved-news-header">
-      <NavigationBar />
+      <NavigationBar
+        isLoggedIn={isLoggedIn}
+        handleOpenSigninModal={handleOpenSigninModal}
+      />
       <div className="saved-news-header__titlebar">
         <span className="saved-news-header__title">Saved articles</span>
         <h4 className="saved-news-header__news-count">Frank, you have 5 saved articles</h4>

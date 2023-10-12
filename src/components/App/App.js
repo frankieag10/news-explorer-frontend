@@ -29,10 +29,6 @@ function App() {
     handleOpenModal("signin");
   };
 
-  const handleSigninModal = () => handleOpenModal("signin");
-
-  const handleSignupModal = () => handleOpenModal("signup");
-
   const handleAltClick = () => {
     if (activeModal === "signin") {
       handleCloseModal();
@@ -83,24 +79,26 @@ function App() {
       <Footer />
       {activeModal === "signin" && (
         <SigninModal
-          isOpen={true}
-          onSignin={handleSignin}
-          handleClose={handleCloseModal}
+          isOpen={activeModal === "signin"}
+          name="signin"
+          buttonText="Signin"
+          handleCloseModal={handleCloseModal}
           onAltClick={handleAltClick}
         />
       )}
       {activeModal === "signup" && (
         <SignupModal
-          isOpen={true}
-          handleClose={handleCloseModal}
+          isOpen={activeModal === "signup"}
+          handleCloseModal={handleCloseModal}
           name="signup"
           buttonText="Signup"
         />
       )}
       {activeModal === "success" && (
         <SuccessModal
+          isOpen={activeModal === "success"}
           name="success"
-          handleClose={handleCloseModal}
+          handleCloseModal={handleCloseModal}
           onClick={handleSuccessModalClick}
         />
       )}
