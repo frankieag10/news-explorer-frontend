@@ -12,6 +12,7 @@ import NavigationBar from "../NavigationBar/NavigationBar.js";
 import { useEscape } from "../Hooks/useEscape.js";
 import { Route, Routes, Navigate, useHistory, Switch } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
