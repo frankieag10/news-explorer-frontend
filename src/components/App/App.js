@@ -9,14 +9,14 @@ import SigninModal from "../SigninModal/SigninModal.js";
 import SavedNews from "../SavedNews/SavedNews";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import NavigationBar from "../NavigationBar/NavigationBar.js";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 import { useEscape } from "../Hooks/useEscape.js";
 import { Route, Routes, Navigate, useHistory } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { ProtectedRoute } from "../../components/ProtectedRoute/ProtectedRoute";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [currentUser, setCurrentUser] = useState("");
 
