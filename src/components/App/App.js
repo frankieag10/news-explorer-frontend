@@ -10,9 +10,10 @@ import SavedNews from "../SavedNews/SavedNews";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import NavigationBar from "../NavigationBar/NavigationBar.js";
 import { useEscape } from "../Hooks/useEscape.js";
-import { Route, Routes, Navigate, useHistory, Switch } from "react-router-dom";
+import { Route, Routes, Navigate, useHistory } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
+import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute.js";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
