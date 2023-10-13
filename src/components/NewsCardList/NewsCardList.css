@@ -58,3 +58,33 @@
   opacity: 0.9;
   background: #e8e8e8;
 }
+
+@media screen and (max-width: 768px) {
+  .newscardlist {
+    padding: 40px;
+  }
+  .newscardlist__grid {
+    margin-top: 32px;
+  }
+  .newscardlist__title {
+    color: var(--main-primary, #1a1b22);
+    font-family: "Roboto Slab";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+  }
+  .newscardlist__button {
+    width: 240px;
+    height: 56px;
+    flex-shrink: 0;
+    color: var(--main-primary, #1a1b22);
+    text-align: center;
+    /* button */
+    font-family: "Roboto";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}

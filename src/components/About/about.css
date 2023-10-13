@@ -50,3 +50,31 @@
   padding: 0;
   margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 61px 40px;
+    gap: 32px;
+  }
+  .about__avatar {
+    width: 232px;
+    height: 232px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid dodgerblue;
+  }
+  .about__title {
+    width: 424px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+  .about__paragraph {
+    width: 424px;
+    color: #1a1b22;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}

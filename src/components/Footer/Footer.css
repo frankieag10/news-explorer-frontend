@@ -65,3 +65,31 @@
   font-weight: 400;
   line-height: 22px;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 24px 40px 18px 40px;
+  }
+  .footer__link {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  .footer__button {
+    color: var(--main-primary, #1a1b22);
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .footer__copyright {
+    color: var(--simulator-gray-text, #b6bcbf);
+    font-family: "Roboto";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}

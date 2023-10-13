@@ -8,6 +8,7 @@ export default function SavedNewsHeader({ isLoggedIn, handleOpenSigninModal }) {
       <NavigationBar
         isLoggedIn={isLoggedIn}
         handleOpenSigninModal={handleOpenSigninModal}
+        inSavedNews={true}
       />
       <div className="saved-news-header__titlebar">
         <span className="saved-news-header__title">Saved articles</span>
