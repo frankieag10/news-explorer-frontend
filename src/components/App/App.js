@@ -67,16 +67,44 @@ function App() {
 
   return (
     <div className="App">
-      {!isLoggedIn ? (
-        <Header
+      <Switch>
+        <Route
+          exact
+          path="/"
+        >
+          <Header
+            isLoggedIn={isLoggedIn}
+            handleOpenSigninModal={handleOpenSigninModal}
+          />
+          <Main />
+        </Route>
+        <ProtectedRoute
           isLoggedIn={isLoggedIn}
-          handleOpenSigninModal={handleOpenSigninModal}
-        />
-      ) : (
-        <SavedNewsHeader isLoggedIn={isLoggedIn} />
-      )}
-      <Main />
-      {isLoggedIn && <SavedNews />}
+          path="/saved-news"
+        >
+          <SavedNewsHeader
+            inSavedNews={true}
+            isLoggedIn={isLoggedIn}
+            handleOpenSigninModal={handleOpenSigninModal}
+          />
+          <Main />
+          <SavedNews />
+        </ProtectedRoute>
+        <Route path="/signin">
+          <Header
+            isLoggedIn={isLoggedIn}
+            handleOpenSigninModal={handleOpenSigninModal}
+          />
+          <Main />
+        </Route>
+        <Route path="/signup">
+          <Header
+            isLoggedIn={isLoggedIn}
+            handleOpenSigninModal={handleOpenSigninModal}
+          />
+          <Main />
+        </Route>
+      </Switch>
       <Footer />
       {activeModal === "signin" && (
         <SigninModal
