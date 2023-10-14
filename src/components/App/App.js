@@ -8,6 +8,7 @@ import SignupModal from "../SignupModal/SignupModal.js";
 import SigninModal from "../SigninModal/SigninModal.js";
 import SavedNews from "../SavedNews/SavedNews";
 import SuccessModal from "../SuccessModal/SuccessModal";
+import MobileMenu from "../MobileMenu/MobileMenu.js";
 import NavigationBar from "../NavigationBar/NavigationBar.js";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 import { useEscape } from "../Hooks/useEscape.js";
@@ -129,6 +130,14 @@ function App() {
         <SuccessModal
           isOpen={activeModal === "success"}
           name="success"
+          handleCloseModal={handleCloseModal}
+          onClick={handleSuccessModalClick}
+        />
+      )}
+      {activeModal === "mobilemenu" && (
+        <MobileMenu
+          isOpen={activeModal === "mobilemenu"}
+          name="mobilemenu"
           handleCloseModal={handleCloseModal}
           onClick={handleSuccessModalClick}
         />

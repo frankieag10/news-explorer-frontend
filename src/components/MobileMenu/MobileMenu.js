@@ -30,7 +30,12 @@ function MobileMenu({ inSavedNews, isLoggedIn, handleOpenSigninModal }) {
             <button className="mobile-navigation__button">Home</button>
             <button className="mobile-navigation__button">Saved Articles</button>
           </div>
-          <button className={`mobile-navigation__signin-button `}>Sign in</button>
+          <button
+            className={`mobile-navigation__signin-button `}
+            onClick={handleOpenSigninModal}
+          >
+            Sign in
+          </button>
           {/* <button className='mobile-navigation__logout-button'>username </button> */}
         </div>
       )}

@@ -54,3 +54,19 @@
   margin: 0;
   padding: 0;
 }
+
+@media screen and (max-width: 606px) {
+  .nothing-found {
+    gap: 15px;
+  }
+  .nothing-found__image {
+    width: 70px;
+  }
+  .nothing-found__title {
+    font-size: 18px;
+  }
+  .nothing-found__text {
+    font-size: 15px;
+    width: 190px;
+  }
+}

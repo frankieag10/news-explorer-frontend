@@ -216,7 +216,7 @@
   }
 }
 
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 606px) {
   .navigationbar {
     display: none;
   }

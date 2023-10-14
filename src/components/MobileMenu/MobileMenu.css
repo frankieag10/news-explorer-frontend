@@ -115,5 +115,8 @@
   margin: 0;
 }
 
-@media screen and (min-width: 321px) and (max-width: 510px) {
+@media screen and (max-width: 606px) {
+  .mobile-navigation {
+    visibility: visible;
+  }
 }
