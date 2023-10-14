@@ -3,134 +3,35 @@ import { useContext } from "react";
 import CurrentPageContext from "../../contexts/CurrentPageContext";
 import logout from "../../images/logout.svg";
 import CurrentUserContext from "../../contexts/CurrentUserContexts";
+import "./MobileMenu.css";
+import React, { useState, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
 
-function MobileMenu({ onClose, onSigninClick, onSignoutClick }) {
-  const { currentPage } = useContext(CurrentPageContext);
-  const { isLoggedIn, currentUser } = useContext(CurrentUserContext);
+function MobileMenu({ inSavedNews, isLoggedIn, handleOpenSigninModal }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const nodeRef = useRef(null);
 
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+    console.log(isMenuOpen);
+  };
   return (
-    <div className="mobile">
-      {isLoggedIn && currentPage === "/" ? (
-        <div className="mobile__container-signed-in">
-          <div className="mobile__header">
-            <NavLink
-              to="/"
-              className="mobile__link"
-            >
-              <h2 className="mobile__title">NewsExplorer</h2>
-            </NavLink>
-            <button
-              className="mobile__close"
-              onClick={onClose}
-            />
+    <div className={`mobile-navigation  ${isMenuOpen && "mobile-navigation__bar_dark"}`}>
+      <div className={`mobile-navigation__bar `}>
+        <h4 className="mobile-navigation__title">NewsExplorer</h4>
+        <button
+          className={`mobile-navigation__toggle-button ${isMenuOpen && "mobile-navigation__toggle-button_active"}`}
+          onClick={handleMenuToggle}
+        ></button>
+      </div>
+      {isMenuOpen && (
+        <div className="mobile-navigation__menu">
+          <div className="mobile-navigation__buttons">
+            <button className="mobile-navigation__button">Home</button>
+            <button className="mobile-navigation__button">Saved Articles</button>
           </div>
-          <ul className="mobile__menu">
-            <li className="mobile__menu-item">
-              <NavLink
-                to="/"
-                className="mobile__link"
-              >
-                <button className="mobile__home">Home</button>
-              </NavLink>
-            </li>
-            <li className="mobile__item">
-              <NavLink
-                to="/saved-news"
-                className="mobile__link"
-              >
-                <button className="mobile__saved">Saved Articles</button>
-              </NavLink>
-            </li>
-            <li className="mobile__item">
-              <button
-                className="mobile__profile-signed-in"
-                onClick={onSignoutClick}
-              >
-                <h2 className="mobile__username">{currentUser}</h2>
-                <img
-                  className="mobile__logout"
-                  src={logout}
-                  alt="logout"
-                />
-              </button>
-            </li>
-          </ul>
-        </div>
-      ) : isLoggedIn && currentPage === "/saved-news" ? (
-        <div className="mobile__container-signed-in">
-          <div className="mobile__header">
-            <NavLink
-              to="/"
-              className="mobile__link"
-            >
-              <h2 className="mobile__title">NewsExplorer</h2>
-            </NavLink>
-            <button
-              className="mobile__close"
-              onClick={onClose}
-            />
-          </div>
-          <ul className="mobile__menu">
-            <li className="mobile__item">
-              <NavLink
-                to="/"
-                className="mobile__link"
-              >
-                <button className="mobile__home">Home</button>
-              </NavLink>
-            </li>
-            <li className="mobile__item">
-              <NavLink
-                to="/saved-news"
-                className="mobile__link"
-              >
-                <button className="mobile__saved">Saved Articles</button>
-              </NavLink>
-            </li>
-            <li className="mobile__item">
-              <button
-                className="mobile__profile-signed-in"
-                onClick={onSignoutClick}
-              >
-                <h2 className="mobile__username">Sam</h2>
-                <img
-                  className="mobile__logout"
-                  src={logout}
-                  alt="logout"
-                />
-              </button>
-            </li>
-          </ul>
-        </div>
-      ) : (
-        <div className="mobile__container">
-          <div className="mobile__header">
-            <NavLink
-              to="/"
-              className="mobile__link"
-            >
-              <h2 className="mobile__title">NewsExplorer</h2>
-            </NavLink>
-            <button
-              className="mobile__close"
-              onClick={onClose}
-            />
-          </div>
-          <ul className="mobile__menu">
-            <NavLink
-              to="/"
-              className="mobile__link"
-            >
-              <button className="mobile__home">Home</button>
-            </NavLink>
-            <button
-              className="mobile__profile"
-              type="button"
-              onClick={onSigninClick}
-            >
-              Sign In
-            </button>
-          </ul>
+          <button className={`mobile-navigation__signin-button `}>Sign in</button>
+          {/* <button className='mobile-navigation__logout-button'>username </button> */}
         </div>
       )}
     </div>
