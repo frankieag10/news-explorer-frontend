@@ -28,7 +28,7 @@
   line-height: 24px;
 }
 
-.mobile-nav__title_saved-news {
+.mobile-navigation__title_saved-news {
   color: var(--main-primary, #1a1b22);
   font-family: "Roboto Slab 700";
   font-size: 16px;
@@ -67,9 +67,11 @@
 }
 .mobile-navigation__toggle-button_active.mobile-navigation__toggle-button::before {
   transform: translateY(0) rotate(45deg);
+  background-color: #fff;
 }
 .mobile-navigation__toggle-button_active.mobile-navigation__toggle-button::after {
   transform: translateY(0) rotate(-45deg);
+  background-color: #fff;
 }
 
 .mobile-navigation__signin-button {
