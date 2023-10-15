@@ -11,7 +11,7 @@ export default function SavedNewsHeader({ isLoggedIn, handleOpenSigninModal, inS
         handleOpenSigninModal={handleOpenSigninModal}
         inSavedNews={true}
       />
-      <MobileNavigation
+      <MobileMenu
         inSavedNews={inSavedNews}
         handleOpenSigninModal={handleOpenSigninModal}
         isLoggedIn={isLoggedIn}
