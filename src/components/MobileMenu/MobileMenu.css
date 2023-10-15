@@ -12,13 +12,10 @@
   align-items: center;
   justify-items: center;
   align-content: center;
-  /* padding-bottom: 16px; */
 }
 .mobile-navigation__bar_dark {
-  /* background-color: rgba(196, 196, 196, 0.01); */
   background-color: var(--main-primary, #1a1b22);
   box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
 }
 .mobile-navigation__title {
   padding: 0;
@@ -28,8 +25,18 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
 }
+
+.mobile-nav__title_saved-news {
+  color: var(--main-primary, #1a1b22);
+  font-family: "Roboto Slab 700";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
 .mobile-navigation__toggle-button {
   display: flex;
   border: none;
@@ -87,7 +94,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: absolute;
   right: 0;
-  /* padding: 16px 24px; */
+
   padding: 16px;
   margin: 0;
   top: calc(100%);
@@ -97,8 +104,7 @@
 .mobile-navigation__buttons {
   display: flex;
   flex-direction: column;
-  /* gap: 8px; */
-  /* justify-content: first baseline; */
+
   align-items: flex-start;
 }
 .mobile-navigation__button {
@@ -109,7 +115,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 56px; /* 311.111% */
+  line-height: 56px;
   cursor: pointer;
   padding: 0;
   margin: 0;

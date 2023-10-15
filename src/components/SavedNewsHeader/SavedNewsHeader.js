@@ -1,14 +1,20 @@
 import React from "react";
 import "./SavedNewsHeader.css";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
-export default function SavedNewsHeader({ isLoggedIn, handleOpenSigninModal }) {
+export default function SavedNewsHeader({ isLoggedIn, handleOpenSigninModal, inSavedNews }) {
   return (
     <div className="saved-news-header">
       <NavigationBar
         isLoggedIn={isLoggedIn}
         handleOpenSigninModal={handleOpenSigninModal}
         inSavedNews={true}
+      />
+      <MobileNavigation
+        inSavedNews={inSavedNews}
+        handleOpenSigninModal={handleOpenSigninModal}
+        isLoggedIn={isLoggedIn}
       />
       <div className="saved-news-header__titlebar">
         <span className="saved-news-header__title">Saved articles</span>
