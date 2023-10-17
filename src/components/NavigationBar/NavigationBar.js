@@ -28,7 +28,7 @@ function NavigationBar({ inSavedNews = false, isLoggedIn, handleOpenSigninModal 
           </button>
         )}
         {isLoggedIn === true ? (
-          <button className="navigationbar__logout-button">Frank</button>
+          <button className={`navigationbar__logout-button ${inSavedNews && "navigationbar__logout-button_saved_news"}`}>Frankie</button>
         ) : (
           <button
             className="navigationbar__signin-button"

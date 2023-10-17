@@ -169,7 +169,7 @@
     font-weight: 500;
     line-height: 24px;
   }
-  .navbar__signin-button {
+  .navigationbar__signin-button {
     color: var(--main-white, #fff);
     text-align: center;
     font-family: "Roboto";
@@ -183,7 +183,7 @@
   .navigationbar__button_active::after {
     top: calc(100% + 20px);
   }
-  .navigationbar__button:hover.navbar__button::after {
+  .navigationbar__button:hover.navigationbar__button::after {
     top: calc(100% + 20px);
   }
   .navigationbar__logout-button {
