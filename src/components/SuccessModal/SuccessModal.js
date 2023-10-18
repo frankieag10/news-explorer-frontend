@@ -1,22 +1,23 @@
-function SuccessModal({ name, onClose, handleClick }) {
+import React from "react";
+import "./SuccessModal.css";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
+export default function SuccessModal({ name, title, handleCloseModal, handleOpenSigninModal }) {
   return (
-    <div className={`modal modal__type_${name}`}>
+    <div className={`modal modal_type_${name}`}>
       <div className="modal__container">
         <button
           className="modal__close"
-          type="button"
-          onClick={onClose}
+          onClick={handleCloseModal}
         ></button>
-        <h2 className="modal__title">Registration Successfully Completed!</h2>
-        <button
-          className="modal__signin-btn"
-          onClick={handleClick}
+        <h3 className="modal__title">{title}</h3>
+        <Link
+          className="form__main-link"
+          onClick={handleOpenSigninModal}
         >
           Sign in
-        </button>
+        </Link>
       </div>
     </div>
   );
 }
-
-export default SuccessModal;
