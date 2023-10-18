@@ -47,7 +47,7 @@ export default function Mobilemenu({ inSavedNews, isLoggedIn, handleOpenSigninMo
             )}
           </div>
           {isLoggedIn ? (
-            <button className="mobile-nav__logout-button">Reza </button>
+            <button className="mobile-nav__logout-button">frankie </button>
           ) : (
             <button
               className={`mobile-nav__signin-button `}

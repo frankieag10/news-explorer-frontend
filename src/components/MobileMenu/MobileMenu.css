@@ -1,168 +1,3 @@
-/*.mobile-navigation {
-  position: relative;
-  display: flex;
-  visibility: hidden;
-  flex-direction: column;
-  margin: 0;
-  padding: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-.mobile-navigation__bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  justify-items: center;
-  align-content: center;
-}
-.mobile-navigation__bar_dark {
-  background-color: var(--main-primary, #1a1b22);
-  box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
-}
-
-.mobile-navigation__title {
-  padding: 0;
-  margin: 0;
-  color: var(--main-white, #fff);
-  font-family: "Roboto Slab 700";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-}
-.mobile-navigation__title_saved-news {
-  color: var(--main-primary, #1a1b22);
-  font-family: "Roboto Slab 700";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-}
-.mobile-navigation__toggle-button {
-  display: flex;
-  border: none;
-  height: 24px;
-  width: 24px;
-  padding: 0px;
-  margin: 0;
-  padding-top: 5px;
-  background: transparent;
-  transition: all 250ms ease-out;
-  cursor: pointer;
-  position: relative;
-}
-.mobile-navigation__toggle-button::after,
-.mobile-navigation__toggle-button::before {
-  content: "";
-  width: 20px;
-  height: 2px;
-  position: absolute;
-  background-color: #ffff;
-  will-change: transform;
-}
-.mobile-navigation__toggle-button_saved-news::before,
-.mobile-navigation__toggle-button_saved-news::after {
-  background-color: #1a1b22;
-}
-.mobile-navigation__toggle-button::before {
-  transform: translateY(-3px);
-}
-.mobile-navigation__toggle-button::after {
-  transform: translateY(3px);
-}
-.mobile-navigation__toggle-button_active.mobile-navigation__toggle-button::before {
-  transform: translateY(0) rotate(45deg);
-  background-color: #fff;
-}
-.mobile-navigation__toggle-button_active.mobile-navigation__toggle-button::after {
-  transform: translateY(0) rotate(-45deg);
-  background-color: #fff;
-}
-.mobile-navigation__toggle-button_open_menu::before {
-  transform: translateY(0) rotate(45deg);
-  background-color: #fff;
-}
-.mobile-navigation__toggle-button_open_menu::after {
-  transform: translateY(0) rotate(-45deg);
-  background-color: #fff;
-}
-
-.mobile-navigation__signin-button {
-  border-radius: 100px;
-  border: 1px solid var(--main-white, #fff);
-  color: var(--main-white, #fff);
-  text-align: center;
-  background-color: #1a1b22;
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  padding: 16px 116px;
-  margin: 0;
-  cursor: pointer;
-}
-.mobile-navigation__logout-button {
-  border-radius: 100px;
-  border: 1px solid var(--main-white, #fff);
-  color: var(--main-white, #fff);
-  text-align: center;
-  background-color: #1a1b22;
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  padding: 16px 116px;
-  margin: 0;
-  cursor: pointer;
-  transition: 200ms all ease;
-  background-image: url(../../images/logout.svg);
-  background-size: 25px;
-  background-repeat: no-repeat;
-  background-position: center right 15px;
-}
-
-.mobile-navigation__menu {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #1a1b22;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  position: absolute;
-  right: 0;
-  left: 0;
-  padding: 16px;
-  margin: 0;
-  top: calc(100%);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-.mobile-navigation__buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.mobile-navigation__button {
-  background-color: transparent;
-  border: none;
-  color: var(--main-white, #fff);
-  font-family: "Roboto 500";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 56px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
-
-@media screen and (max-width: 606px) {
-  .mobile-navigation {
-    visibility: visible;
-  }
-}
-*/
-
 .mobile-nav {
   position: relative;
   display: flex;
@@ -178,13 +13,10 @@
   align-items: center;
   justify-items: center;
   align-content: center;
-  /* padding-bottom: 16px; */
 }
 .mobile-nav__bar_dark {
-  /* background-color: rgba(196, 196, 196, 0.01); */
   background-color: var(--main-primary, #1a1b22);
   box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .mobile-nav__title {
@@ -195,7 +27,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
 }
 .mobile-nav__title_saved-news {
   color: var(--main-primary, #1a1b22);
@@ -203,7 +35,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
 }
 .mobile-nav__toggle-button {
   display: flex;
@@ -260,12 +92,11 @@
   color: var(--main-white, #fff);
   text-align: center;
   background-color: #1a1b22;
-  /* button */
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 133.333% */
+  line-height: 24px;
   padding: 16px 116px;
   margin: 0;
   cursor: pointer;
@@ -276,12 +107,11 @@
   color: var(--main-white, #fff);
   text-align: center;
   background-color: #1a1b22;
-  /* button */
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 133.333% */
+  line-height: 24px;
   padding: 16px 116px;
   margin: 0;
   cursor: pointer;
@@ -301,7 +131,6 @@
   position: absolute;
   right: 0;
   left: 0;
-  /* padding: 16px 24px; */
   padding: 16px;
   margin: 0;
   top: calc(100%);
@@ -311,8 +140,6 @@
 .mobile-nav__buttons {
   display: flex;
   flex-direction: column;
-  /* gap: 8px; */
-  /* justify-content: first baseline; */
   align-items: flex-start;
 }
 .mobile-nav__button {
@@ -323,7 +150,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 56px; /* 311.111% */
+  line-height: 56px;
   cursor: pointer;
   padding: 0;
   margin: 0;
