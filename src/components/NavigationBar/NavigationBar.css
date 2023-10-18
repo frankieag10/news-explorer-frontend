@@ -140,7 +140,7 @@
   border-radius: 100px;
   cursor: pointer;
   transition: 200ms all ease;
-  background-image: url(../../images/logout-dark.svg);
+  background-image: url(../../images/logout.svg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center right 15px;
@@ -148,7 +148,7 @@
 .navigationbar__logout-button_saved_news {
   border: 1px solid var(--main-primary, #1a1b22);
   color: var(--main-primary, #1a1b22);
-  background-image: url(../../images/logout.svg);
+  background-image: url(../../images/logout-dark.svg);
 }
 
 .navigationbar__link {
