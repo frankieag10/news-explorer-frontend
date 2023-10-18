@@ -205,7 +205,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
     padding: 5px 54px 5px 19px;
     height: 40px;
   }
@@ -217,7 +217,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
   }
   .navigationbar__button_saved-news_active::after {
     top: calc(100% + 20px);
