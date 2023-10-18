@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import About from "../About/About";
 import SearchBar from "../SearchBar/SearchBar";
 import Loading from "../Loading/Loading";
 import Preloader from "../Preloader/Preloader";
@@ -19,6 +20,7 @@ function Header({ isLoggedIn, handleOpenSigninModal }) {
       />
       <SearchBar />
       <Loading />
+      <About />
     </div>
   );
 }
