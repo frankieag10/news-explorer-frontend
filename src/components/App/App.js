@@ -124,6 +124,7 @@ function App() {
           handleCloseModal={handleCloseModal}
           name="signup"
           buttonText="Signup"
+          onAltClick={handleAltClick}
         />
       )}
       {activeModal === "success" && (

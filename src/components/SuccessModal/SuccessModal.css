@@ -2,3 +2,57 @@
   font-family: "Roboto";
   src: url(../../fonts/roboto-400-regular.woff);
 }
+
+/*.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+.modal__close {
+  background: url(../../images/close.svg);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  right: -46px;
+  top: -36px;
+  border: none;
+  cursor: pointer;
+}
+.modal__content {
+  position: relative;
+  padding: 34px 36px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.modal__title {
+  color: #000;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  width: 315px;
+  height: 56px;
+  flex-shrink: 0;
+  margin-bottom: 14px;
+}
+.modal__main-link {
+  text-decoration: none;
+}
+*/

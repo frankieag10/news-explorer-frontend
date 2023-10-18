@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useForm } from "../Hooks/useForm";
+import "./SignupModal.css";
 
-function SignupModal({ isOpen, onSignup, handleCloseModal, onAltClick }) {
+function SignupModal({ isOpen, onSignup, handleCloseModal, onRegisterUser, onAltClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -10,11 +12,11 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onAltClick }) {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleUsernameChange = (e) => setUsername(e.target.value);
 
-  function handleSubmit(e) {
+  /*function handleSubmit(e) {
     e.preventDefault();
     onSignup({ email, password, username });
   }
-
+*/
   useEffect(() => {
     if (isOpen) {
       setEmail("");
@@ -22,6 +24,12 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onAltClick }) {
       setUsername("");
     }
   }, [isOpen]);
+
+  const { values, handleChange, setValues } = useForm({});
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onRegisterUser(email, password, username);
+  };
 
   return (
     <ModalWithForm
@@ -40,14 +48,11 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onAltClick }) {
           type="email"
           placeholder="Enter Email"
           value={email}
-          onChange={handleEmailChange}
+          onChange={handleChange}
           required
         />
       </label>
-      <span
-        className="modal__error"
-        id="email-input-error"
-      ></span>
+      <span className="form__error">This email is not available</span>
       <label>
         <h3 className="modal__label">Password:</h3>
         <input
@@ -56,14 +61,13 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onAltClick }) {
           type="text"
           placeholder="Enter Password"
           value={password}
-          onChange={handlePasswordChange}
+          onChange={handleChange}
           required
+          minLength={1}
+          maxLength={30}
         />
       </label>
-      <span
-        className="modal__error"
-        id="password-input-error"
-      ></span>
+
       <label>
         <h3 className="modal__label">Username:</h3>
         <input
@@ -72,14 +76,12 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onAltClick }) {
           type="text"
           placeholder="Enter your Username"
           value={username}
-          onChange={handleUsernameChange}
+          onChange={handleChange}
           required
+          minLength={1}
+          maxLength={30}
         />
       </label>
-      <span
-        className="modal__error"
-        id="username-input-error"
-      ></span>
     </ModalWithForm>
   );
 }

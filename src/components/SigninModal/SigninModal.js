@@ -1,8 +1,12 @@
+import React from "react";
 import { useEffect, useState } from "react";
+import "./SigninModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useEscape } from "../../components/Hooks/useEscape";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useForm } from "../Hooks/useForm";
 
-function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, buttonText, onAltClick }) {
+function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, onRegisterUser, handleOpenSignupModal, buttonText, onAltClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
@@ -22,17 +26,14 @@ function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, buttonTe
     }
   }, [email, password]);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  /*onst handleSubmit = (e) => {
     e.preventDefault();
     onSignin({ email, password });
+  };*/
+  const { values, handleChange, setValues } = useForm({});
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onRegisterUser({ email, password });
   };
 
   return (
@@ -53,14 +54,13 @@ function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, buttonTe
           type="email"
           placeholder="Enter Email"
           value={email}
-          onChange={handleEmailChange}
+          onChange={handleChange}
           required
+          minLength={1}
+          maxLength={30}
         />
       </label>
-      <span
-        className="modal__error"
-        id="email-input-error"
-      ></span>
+      <span className="form__error_signin">Invalid email address</span>
       <label>
         <h3 className="modal__label">Password:</h3>
         <input
@@ -69,8 +69,10 @@ function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, buttonTe
           type="text"
           placeholder="Enter Password"
           value={password}
-          onChange={handlePasswordChange}
+          onChange={handleChange}
           required
+          minLength={1}
+          maxLength={30}
         />
       </label>
       <span

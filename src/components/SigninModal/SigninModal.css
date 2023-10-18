@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../../fonts/inter-400-regular.woff);
+}
+.form__error_signin {
+  text-align: left;
+  color: #f00;
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}

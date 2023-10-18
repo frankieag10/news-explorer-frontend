@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/roboto-400-regular.woff);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../../fonts/inter-400-regular.woff);
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -14,7 +23,7 @@
   position: relative;
   background-color: #fff;
   width: 430px;
-  height: 457px;
+  height: 480px;
   border-radius: 16px;
 }
 
@@ -38,7 +47,7 @@
   position: absolute;
   top: -45px;
   right: -45px;
-  background: transparent url("../../images/close.svg") center no-repeat;
+  background: transparent url(../../images/close.svg) center no-repeat;
   width: 40px;
   height: 40px;
   border: none;
