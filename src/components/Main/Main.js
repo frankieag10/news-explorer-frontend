@@ -5,12 +5,12 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import IsLoadingContext from "../../contexts/IsLoadingContext";
 import Preloader from "../Preloader/Preloader";
 import SavedNews from "../SavedNews/SavedNews";
+import "./Main.css";
 
-function Main({ signinClick, signoutClick }) {
+function Main() {
   <div className="main">
     <About />
-    <NewsCardList />
-    <SavedNews />
+    {/*<NewsCardList />*/}
   </div>;
 }
 
