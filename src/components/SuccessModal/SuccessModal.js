@@ -5,7 +5,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 export default function SuccessModal({ name, title, handleCloseModal, handleOpenSigninModal }) {
   return (
     <div className={`modal modal_type_${name}`}>
-      <div className="modal__container">
+      <div className="modal__content">
         <button
           className="modal__close"
           onClick={handleCloseModal}

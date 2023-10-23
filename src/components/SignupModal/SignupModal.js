@@ -28,7 +28,7 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onRegisterUser, onAlt
   const { values, handleChange, setValues } = useForm({});
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    onRegisterUser(email, password, username);
+    onRegisterUser(values);
   };
 
   return (
@@ -47,7 +47,7 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onRegisterUser, onAlt
           id="email-input"
           type="email"
           placeholder="Enter Email"
-          value={email}
+          value={values.email || ""}
           onChange={handleChange}
           required
         />
@@ -60,7 +60,7 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onRegisterUser, onAlt
           id="password-input"
           type="text"
           placeholder="Enter Password"
-          value={password}
+          value={values.password || ""}
           onChange={handleChange}
           required
           minLength={1}
@@ -75,7 +75,7 @@ function SignupModal({ isOpen, onSignup, handleCloseModal, onRegisterUser, onAlt
           id="username-input"
           type="text"
           placeholder="Enter your Username"
-          value={username}
+          value={values.username || ""}
           onChange={handleChange}
           required
           minLength={1}

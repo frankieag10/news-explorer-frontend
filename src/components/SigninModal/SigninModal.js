@@ -6,34 +6,15 @@ import { useEscape } from "../../components/Hooks/useEscape";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useForm } from "../Hooks/useForm";
 
-function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, onRegisterUser, handleOpenSignupModal, buttonText, onAltClick }) {
+function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, onRegisterUser, handleOpenSigninModal, buttonText, onAltClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      setEmail("");
-      setPassword("");
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (email === "" || password === "") {
-      setIsDisabled(true);
-    } else {
-      setIsDisabled(false);
-    }
-  }, [email, password]);
-
-  /*onst handleSubmit = (e) => {
-    e.preventDefault();
-    onSignin({ email, password });
-  };*/
   const { values, handleChange, setValues } = useForm({});
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    onRegisterUser({ email, password });
+    onRegisterUser({ values });
   };
 
   return (
@@ -53,7 +34,7 @@ function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, onRegist
           id="email-input"
           type="email"
           placeholder="Enter Email"
-          value={email}
+          value={values.email || ""}
           onChange={handleChange}
           required
           minLength={1}
@@ -68,7 +49,7 @@ function SigninModal({ isOpen = { isOpen }, onSignin, handleCloseModal, onRegist
           id="password-input"
           type="text"
           placeholder="Enter Password"
-          value={password}
+          value={values.password || ""}
           onChange={handleChange}
           required
           minLength={1}

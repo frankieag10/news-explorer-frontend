@@ -145,6 +145,20 @@
   border: none;
 }
 
+.form__link-container {
+  position: absolute;
+  margin-top: 16px;
+  bottom: 28px;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .modal__title {
     width: 158px;
